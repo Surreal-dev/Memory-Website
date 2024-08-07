@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Bot - Commands</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html" class="logo-link">
+            <img src="images/bot-logo.png" alt="Memory Bot Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="commands.html" class="nav-item">Commands</a></li>
+                <li><a href="changelog.html" class="nav-item">Changelog</a></li>
+                <li><a href="privacy.html" class="nav-item">Privacy Policy</a></li>
+                <li><a href="terms.html" class="nav-item">Terms of Service</a></li>
+            </ul>
+        </nav>
+        <div class="indicator"></div>
+    </div>
+    <main>
+        <section id="content">
+            <!-- Page-specific content here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Memory Bot</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            const indicator = document.querySelector('.indicator');
+            
+            const updateIndicator = () => {
+                const activeItem = document.querySelector('.nav-item.active');
+                if (activeItem) {
+                    const rect = activeItem.getBoundingClientRect();
+                    const sidebarRect = document.querySelector('.sidebar').getBoundingClientRect();
+                    const sidebarOffset = sidebarRect.left;
+                    indicator.style.width = `${rect.width}px`;
+                    indicator.style.left = `${rect.left - sidebarOffset}px`;
+                }
+            };
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    updateIndicator();
+                });
+            });
+            
+            updateIndicator();
+        });
+    </script>
+</body>
+</html>
