@@ -22,39 +22,54 @@
         <div class="indicator"></div>
     </div>
     <main>
-        <section id="content">
-            <!-- Page-specific content here -->
+        <section id="terms">
+            <div class="container">
+                <h1>Terms of Service for Memory Bot</h1>
+                <p><strong>Effective Date:</strong> 8/7/24</p>
+        
+                <h2>1. Acceptance of Terms</h2>
+                <p>By using Memory Bot, you agree to these Terms of Service. If you do not agree with these terms, please do not use the bot.</p>
+        
+                <h2>2. Description of Service</h2>
+                <p>Memory Bot provides services related to reminders, to-do lists, and other related functionalities within Discord servers. These services may include features to create, manage, and store reminders and to-do lists.</p>
+        
+                <h2>3. User Responsibilities</h2>
+                <h3>a. Account Security:</h3>
+                <p>You are responsible for maintaining the confidentiality of your Discord account and any activity that occurs under your account.</p>
+                <h3>b. Prohibited Use:</h3>
+                <p>You agree not to use Memory Bot for any unlawful or prohibited activities. This includes, but is not limited to, harassment, spamming, or any activities that violate Discord’s Terms of Service.</p>
+        
+                <h2>4. Data Collection and Usage</h2>
+                <h3>a. Data Collection:</h3>
+                <p>We collect and store information necessary to provide and improve the services of Memory Bot, including user data, reminder and to-do list information, and server details.</p>
+                <h3>b. Data Usage:</h3>
+                <p>Your data is used to operate, manage, and improve the services provided by Memory Bot. For more details on how we handle your data, please refer to our <a href="privacy.html">Privacy Policy</a>.</p>
+        
+                <h2>5. Intellectual Property</h2>
+                <p>All content, trademarks, and other intellectual property associated with Memory Bot are owned by us or our licensors. You may not use, reproduce, or distribute any intellectual property without our explicit permission.</p>
+        
+                <h2>6. Limitation of Liability</h2>
+                <p>Memory Bot is provided "as is" and "as available." We make no warranties, express or implied, regarding the bot’s performance or availability. We are not liable for any damages arising from your use of Memory Bot, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+        
+                <h2>7. Termination</h2>
+                <p>We reserve the right to suspend or terminate your access to Memory Bot at our discretion, without prior notice, for any reason, including if you violate these Terms of Service.</p>
+        
+                <h2>8. Changes to Terms</h2>
+                <p>We may update these Terms of Service from time to time. Changes will be posted on our website or communicated through the bot. Your continued use of Memory Bot after changes are posted constitutes acceptance of the new terms.</p>
+        
+                <h2>9. Governing Law</h2>
+                <p>These Terms of Service are governed by and construed in accordance with the laws of the United States of America. Any disputes arising from or related to these terms shall be resolved in the courts of the United States of America.</p>
+        
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions or concerns about these Terms of Service, please contact us at:</p>
+                <!-- <p><strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a></p> -->
+                <!-- <p><strong>Website:</strong> <a href="[Your Website URL]">[Your Website URL]</a></p> -->
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Memory Bot</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navItems = document.querySelectorAll('.nav-item');
-            const indicator = document.querySelector('.indicator');
-            
-            const updateIndicator = () => {
-                const activeItem = document.querySelector('.nav-item.active');
-                if (activeItem) {
-                    const rect = activeItem.getBoundingClientRect();
-                    const sidebarRect = document.querySelector('.sidebar').getBoundingClientRect();
-                    const sidebarOffset = sidebarRect.left;
-                    indicator.style.width = `${rect.width}px`;
-                    indicator.style.left = `${rect.left - sidebarOffset}px`;
-                }
-            };
-            
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    navItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                    updateIndicator();
-                });
-            });
-            
-            updateIndicator();
-        });
-    </script>
+    <script src="js/indicator.js"></script>
 </body>
 </html>

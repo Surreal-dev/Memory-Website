@@ -22,39 +22,66 @@
         <div class="indicator"></div>
     </div>
     <main>
-        <section id="content">
-            <!-- Page-specific content here -->
+        <section id="privacy-policy">
+            <div class="container">
+                <h1>Privacy Policy for Memory Bot</h1>
+                <p><strong>Effective Date:</strong> 8/7/2024</p>
+
+                <h2>1. Introduction</h2>
+                <p>Welcome to Memory Bot. This privacy policy outlines how we collect, use, and protect your personal information when you use our Discord bot, Memory. By using Memory Bot, you agree to the practices described in this policy.</p>
+
+                <h2>2. Information We Collect</h2>
+                <h3>a. Personal Information:</h3>
+                <p>We collect and store information related to your Discord user account, such as your username and user ID, to provide personalized services, manage reminders, and create to-do lists.</p>
+
+                <h3>b. Data Collected Through Bot Interactions:</h3>
+                <p>We collect information about the reminders and to-do lists you create and manage through the bot. This includes content of reminders and list items, as well as dates and times.</p>
+
+                <h3>c. Server Information:</h3>
+                <p>We collect information about the servers where Memory Bot is active, such as server ID and channel ID, to manage and deliver reminders effectively.</p>
+
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide and manage the reminder and to-do list features of Memory Bot.</li>
+                    <li>Customize and improve our services based on user interactions.</li>
+                    <li>Communicate with you regarding updates, changes, or issues related to Memory Bot.</li>
+                </ul>
+
+                <h2>4. Data Retention</h2>
+                <p>We retain your data for as long as necessary to provide our services to you. You can request the deletion of your personal data at any time by contacting us.</p>
+
+                <h2>5. Data Security</h2>
+                <p>We implement reasonable security measures to protect your data from unauthorized access, alteration, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+                <h2>6. Data Sharing</h2>
+                <p>We do not share your personal information with third parties except:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> We may share data with third-party service providers who assist us in operating the bot and delivering our services.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required by law or to respond to legal processes.</li>
+                </ul>
+
+                <h2>7. User Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data and request a copy.</li>
+                    <li>Request the correction or deletion of inaccurate or incomplete data.</li>
+                    <li>Opt-out of communications from us related to Memory Bot.</li>
+                </ul>
+
+                <h2>8. Changes to This Privacy Policy</h2>
+                <p>We may update this privacy policy from time to time. We will notify you of any significant changes by posting the new policy on our website or through the bot.</p>
+
+                <!-- <h2>9. Contact Us</h2>
+                <p>If you have any questions or concerns about this privacy policy or the handling of your personal information, please contact us at:</p> -->
+                <!-- <p><strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a></p> -->
+                <!-- <p><strong>Website:</strong> <a href="[Your Website URL]">[Your Website URL]</a></p> -->
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Memory Bot</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navItems = document.querySelectorAll('.nav-item');
-            const indicator = document.querySelector('.indicator');
-            
-            const updateIndicator = () => {
-                const activeItem = document.querySelector('.nav-item.active');
-                if (activeItem) {
-                    const rect = activeItem.getBoundingClientRect();
-                    const sidebarRect = document.querySelector('.sidebar').getBoundingClientRect();
-                    const sidebarOffset = sidebarRect.left;
-                    indicator.style.width = `${rect.width}px`;
-                    indicator.style.left = `${rect.left - sidebarOffset}px`;
-                }
-            };
-            
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    navItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                    updateIndicator();
-                });
-            });
-            
-            updateIndicator();
-        });
-    </script>
+    <script src="js/indicator.js"></script>
 </body>
 </html>
