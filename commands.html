@@ -27,13 +27,120 @@
         <div class="indicator"></div>
     </div>
     <main>
-        <section id="content">
-            <!-- Page-specific content here -->
-        </section>
+        <div class="commands-container">
+            <!-- Tabs Navigation -->
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="reminders">Reminders</button>
+                <button class="tab-button" data-tab="todo">To-Do</button>
+                <button class="tab-button" data-tab="utility">Utility</button>
+                <!-- Add more buttons for other categories -->
+            </div>
+        
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Reminders Category -->
+                <div id="reminders" class="tab-pane active">
+                    <div class="command">
+                        <h3>/setpreminder</h3>
+                        <p><b>Description:</b> Set a personal reminder.</p>
+                        <p><b>Parameters:</b> <i>date, hour, minute, message, recurrence</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/setsreminder</h3>
+                        <p><b>Description:</b> Set a server reminder.</p>
+                        <p><b>Parameters:</b> <i>date, hour, minute, message, recurrence</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/listpreminders</h3>
+                        <p><b>Description:</b> List all your personal reminders.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                    <div class="command">
+                        <h3>/listsreminders</h3>
+                        <p><b>Description:</b> List all your server reminders.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                    <div class="command">
+                        <h3>/updatepreminder</h3>
+                        <p><b>Description:</b> Update a personal reminder.</p>
+                        <p><b>Parameters:</b> <i>reminder_id, date, hour, minute, message, recurrence</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/updatesreminder</h3>
+                        <p><b>Description:</b> Update a server reminder.</p>
+                        <p><b>Parameters:</b> <i>reminder_id, date, hour, minute, message, recurrence</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/deletepreminder</h3>
+                        <p><b>Description:</b> Delete a personal reminder.</p>
+                        <p><b>Parameters:</b> <i>reminder_id</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/deletesreminder</h3>
+                        <p><b>Description:</b> Delete a server reminder.</p>
+                        <p><b>Parameters:</b> <i>reminder_id</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/clearpreminders</h3>
+                        <p><b>Description:</b> Clear all personal reminders.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                    <div class="command">
+                        <h3>/clearsreminders</h3>
+                        <p><b>Description:</b> Clear all server reminders.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                </div>
+        
+                <!-- To-Do Category -->
+                <div id="todo" class="tab-pane">
+                    <div class="command">
+                        <h3>/addtodo</h3>
+                        <p><b>Description:</b> Add a task to your todo list</p>
+                        <p><b>Parameters:</b> <i>task</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/listtodos</h3>
+                        <p><b>Description:</b> List all tasks in your todo list.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                    <div class="command">
+                        <h3>/completetodo</h3>
+                        <p><b>Description:</b> Mark a task as completed.</p>
+                        <p><b>Parameters:</b> <i>task_id</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/removetodo</h3>
+                        <p><b>Description:</b> Remove a task from your todo list.</p>
+                        <p><b>Parameters:</b> <i>task_id</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/cleartodo</h3>
+                        <p><b>Description:</b> Clear all tasks in your todo list.</p>
+                        <p><b>Parameters:</b> None</p>
+                    </div>
+                </div>
+        
+                <!-- General Category -->
+                <div id="utility" class="tab-pane">
+                    <div class="command">
+                        <h3>/serversettings</h3>
+                        <p><b>Description:</b> Configure server settings.</p>
+                        <p><b>Parameters:</b> <i>channel, role</i></p>
+                    </div>
+                    <div class="command">
+                        <h3>/help</h3>
+                        <p><b>Description:</b> Displays the help menu</p>
+                        <p><b>Parameters:</b> <i>command_name</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Memory Bot</p>
+        &copy; 2024 Memory Bot. All rights reserved.
     </footer>
+    <script src="js/tabs.js"></script>
     <script src="js/indicator.js"></script>
     <script src="js/hamburger.js"></script>
 </body>
